@@ -35,4 +35,4 @@ jobs:
       
       - name: Sign the image
         run: |
-          cosign sign ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx:latest
+          cosign sign --yes ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx:latest
