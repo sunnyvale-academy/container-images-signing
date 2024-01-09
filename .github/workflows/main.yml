@@ -23,8 +23,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: './labs/00 - Prerequisites/'
-          file: '/labs/00 - Prerequisites/Dockerfile'
+          context: 'labs/00\ -\ Prerequisites/'
+          file: 'labs/00\ -\ Prerequisites/Dockerfile'
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx:latest
 
