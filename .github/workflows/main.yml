@@ -17,7 +17,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
@@ -26,10 +26,10 @@ jobs:
           context: '00 - Prerequisites/'
           file: '00 - Prerequisites/Dockerfile'
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx:latest
+          tags: ${{ env.DOCKERHUB_USERNAME }}/my-nginx:latest
 
       - uses: sigstore/cosign-installer@main
       
       - name: Sign the images
         run: |
-          cosign sign ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx:latest
+          cosign sign ${{ env.DOCKERHUB_USERNAME }}/my-nginx:latest
