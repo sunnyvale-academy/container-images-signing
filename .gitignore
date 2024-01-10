@@ -1,2 +1,4 @@
 **/cosign.key
 **/cosign.pub
+**/*.dtmp
+**/*.bkp

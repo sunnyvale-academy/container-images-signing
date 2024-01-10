@@ -1,0 +1,15 @@
+apiVersion: policy.sigstore.dev/v1beta1
+kind: ClusterImagePolicy
+metadata:
+  name: ensure-images-are-signed
+spec:
+  images:
+    - glob: index.docker.io/sunnyvaleit/**
+  authorities:
+    - keyless:
+        url: https://fulcio.sigstore.dev
+        identities:
+          - issuer: https://token.actions.githubusercontent.com
+            subject: https://github.com/sunnyvale-academy/container-images-signing/.github/workflows/main.yml@refs/heads/master
+      ctlog:
+        url: https://rekor.sigstore.dev
