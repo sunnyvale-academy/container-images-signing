@@ -9,7 +9,8 @@ Cosign from sigstore makes the traditional signing of container images vastly ea
 Let's try to keyless sign the sunnyvaleit/my-nginx:latest container image.
 
 ```console
-$ Generating ephemeral keys...
+$ cosign sign sunnyvaleit/my-nginx:latest
+Generating ephemeral keys...
 Retrieving signed certificate...
 
         The sigstore service, hosted by sigstore a Series of LF Projects, LLC, is provided pursuant to the Hosted Project Tools Terms of Use, available at https://lfprojects.org/policies/hosted-project-tools-terms-of-use/.

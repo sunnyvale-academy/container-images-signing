@@ -2,3 +2,4 @@
 **/cosign.pub
 **/*.dtmp
 **/*.bkp
+**/.DS_Store
